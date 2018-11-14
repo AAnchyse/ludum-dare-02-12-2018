@@ -7,7 +7,3 @@ Aliases :
 ThomasCDeveloper : Thomas C
 Mrgrimace : Alexandre A
 klosenlinks : Laurent F
-
-
-
-
