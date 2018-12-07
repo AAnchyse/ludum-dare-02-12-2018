@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd4dfda0530cc429a58267b6df9ba0, type: 3}
+  m_Name: Pew Pew Bow
+  m_EditorClassIdentifier: 
+  weaponName: Le fusil
+  mag: 24
+  delay: 0.4
+  reloadTime: 1.5
+  isMelee: 0
+  effect: {fileID: 11400000, guid: e23061f7a7a6dad448d411ca96e97bf7, type: 2}

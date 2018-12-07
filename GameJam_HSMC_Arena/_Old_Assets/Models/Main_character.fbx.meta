@@ -1,0 +1,201 @@
+fileFormatVersion: 2
+guid: aa2ad5ac6fbc25444ac6effc2c2cb99c
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 18608_Attic_helmet_v1
+    100002: BezierCurve
+    100004: BezierCurve.000
+    100006: BezierCurve.001
+    100008: BezierCurve.002
+    100010: BezierCurve.003
+    100012: BezierCurve.004
+    100014: BezierCurve.005
+    100016: Cube
+    100018: Cube.001
+    100020: kiinnike.001
+    100022: kiinnikenahka
+    100024: lasinreunukset
+    100026: lasit
+    100028: //RootNode
+    100030: maski
+    100032: nappi
+    100034: remmi.001
+    100036: suodatin
+    100038: suukappale
+    400000: 18608_Attic_helmet_v1
+    400002: BezierCurve
+    400004: BezierCurve.000
+    400006: BezierCurve.001
+    400008: BezierCurve.002
+    400010: BezierCurve.003
+    400012: BezierCurve.004
+    400014: BezierCurve.005
+    400016: Cube
+    400018: Cube.001
+    400020: kiinnike.001
+    400022: kiinnikenahka
+    400024: lasinreunukset
+    400026: lasit
+    400028: //RootNode
+    400030: maski
+    400032: nappi
+    400034: remmi.001
+    400036: suodatin
+    400038: suukappale
+    2100000: Material.010
+    2100002: Material.011
+    2100004: Material.009
+    2100006: Material
+    2100008: Material.013
+    2100010: Material.001
+    2100012: Material.015
+    2100014: Material.005
+    2100016: Material.004
+    2100018: Material.003
+    2100020: Material.006
+    2100022: Material.012
+    2100024: Material.014
+    2100026: Material.008
+    2100028: No Name
+    2300000: 18608_Attic_helmet_v1
+    2300002: BezierCurve
+    2300004: BezierCurve.000
+    2300006: BezierCurve.001
+    2300008: BezierCurve.002
+    2300010: BezierCurve.003
+    2300012: BezierCurve.004
+    2300014: BezierCurve.005
+    2300016: Cube
+    2300018: Cube.001
+    2300020: kiinnike.001
+    2300022: kiinnikenahka
+    2300024: lasinreunukset
+    2300026: lasit
+    2300028: maski
+    2300030: nappi
+    2300032: remmi.001
+    2300034: suodatin
+    2300036: suukappale
+    3300000: 18608_Attic_helmet_v1
+    3300002: BezierCurve
+    3300004: BezierCurve.000
+    3300006: BezierCurve.001
+    3300008: BezierCurve.002
+    3300010: BezierCurve.003
+    3300012: BezierCurve.004
+    3300014: BezierCurve.005
+    3300016: Cube
+    3300018: Cube.001
+    3300020: kiinnike.001
+    3300022: kiinnikenahka
+    3300024: lasinreunukset
+    3300026: lasit
+    3300028: maski
+    3300030: nappi
+    3300032: remmi.001
+    3300034: suodatin
+    3300036: suukappale
+    4300000: BezierCurve.005
+    4300002: BezierCurve.004
+    4300004: BezierCurve.003
+    4300006: BezierCurve.002
+    4300008: BezierCurve
+    4300010: 18608_Attic_helmet_v1
+    4300012: Cube
+    4300014: kiinnikenahka
+    4300016: lasinreunukset
+    4300018: lasit
+    4300020: maski
+    4300022: nappi
+    4300024: remmi.001
+    4300026: kiinnike.001
+    4300028: suodatin
+    4300030: suukappale
+    4300032: BezierCurve.001
+    4300034: Cube.001
+    4300036: BezierCurve.000
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

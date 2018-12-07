@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f9cc218c03168489f0bb9c516fcfad, type: 3}
+  m_Name: _Ability - Knockback
+  m_EditorClassIdentifier: 
+  aName: Knockback
+  aCooldown: 30
+  aIcon: {fileID: 21300000, guid: 28c47ee67f149a042b841aed0e38cfe2, type: 3}
+  effects:
+  - {fileID: 11400000, guid: 61da5e3ddf325674a84d4c70796927ef, type: 2}
+  - {fileID: 11400000, guid: 61da5e3ddf325674a84d4c70796927ef, type: 2}
+  - {fileID: 11400000, guid: 61da5e3ddf325674a84d4c70796927ef, type: 2}
+  - {fileID: 11400000, guid: 61da5e3ddf325674a84d4c70796927ef, type: 2}
+  hotkey: 102
+  adc: {fileID: 8300000, guid: 6df3828296819dc43b4bc6deb81175cd, type: 3}
+  speedMultiplier: 1
+  healthMultiplier: 1
+  knockbackStrenghtMultiplier: 0.9
+  firerateMultiplier: 1
+  damageMultiplier: 1
+  castOnSelf: 1
+  castOnEnnemy: 0

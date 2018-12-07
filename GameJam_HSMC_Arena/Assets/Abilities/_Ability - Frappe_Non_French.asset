@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f9cc218c03168489f0bb9c516fcfad, type: 3}
+  m_Name: _Ability - Frappe_Non_French
+  m_EditorClassIdentifier: 
+  aName: Frappe_en
+  aCooldown: 30
+  aIcon: {fileID: 21300000, guid: b98a635b8a506cb4e9335661609470e3, type: 3}
+  effects:
+  - {fileID: 11400000, guid: 02ddf509a8017284fba6303ae55908b3, type: 2}
+  hotkey: 9
+  adc: {fileID: 8300000, guid: 90c7a0d1c4c5e774a95a1b8f68b364d5, type: 3}
+  speedMultiplier: 1
+  healthMultiplier: 1
+  knockbackStrenghtMultiplier: 1
+  firerateMultiplier: 0.9
+  damageMultiplier: 1
+  castOnSelf: 0
+  castOnEnnemy: 0

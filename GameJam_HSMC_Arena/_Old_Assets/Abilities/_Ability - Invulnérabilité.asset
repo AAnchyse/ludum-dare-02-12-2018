@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66f9cc218c03168489f0bb9c516fcfad, type: 3}
+  m_Name: "_Ability - Invuln\xE9rabilit\xE9"
+  m_EditorClassIdentifier: 
+  aName: 
+  aCooldown: 8
+  aIcon: {fileID: 21300000, guid: a3d981075a230a943b30d5163d4411c9, type: 3}
+  effects:
+  - {fileID: 11400000, guid: 6eca3bfd2ca014d4499a16c325ed0f32, type: 2}
+  hotkey: 105
+  speedMultiplier: 1
+  healthMultiplier: 1
+  castOnSelf: 1
+  castOnEnnemy: 0

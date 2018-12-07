@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48dd4dfda0530cc429a58267b6df9ba0, type: 3}
+  m_Name: Le Tuyau
+  m_EditorClassIdentifier: 
+  weaponName: Le Tuyau
+  mag: 0
+  delay: 0.9
+  reloadTime: 0
+  isMelee: 1
+  effect: {fileID: 11400000, guid: 032cf509c024b53489103cba1190e3d3, type: 2}

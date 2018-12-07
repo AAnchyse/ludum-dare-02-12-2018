@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d235196414ca3fc43b0a4117e3031ac0, type: 3}
+  m_Name: _Behaviour - Invulnerabilty
+  m_EditorClassIdentifier: 
+  activation: {fileID: 0}
+  desactivation: {fileID: 11400000, guid: f0815bdd02d26ce4892d075c0f0dd49a, type: 2}
+  maxStack: 1
+  duree: 5
+  timed: 1
+  speedMultiplier: 1
+  healthMultiplier: 1
+  damageMultiplier: 1
+  knocbackStrengthMultiplier: 1
+  fireRateMultiplier: 1
+  giveInvulnerability: 1
