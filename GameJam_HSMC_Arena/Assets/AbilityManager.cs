@@ -16,30 +16,36 @@ public class AbilityManager : MonoBehaviour
     public AudioSource ads;
     int state = 0;
 
+    //Effets de particule
+    ParticleSystem newParticleSystem;
+    public ParticleSystem shock;
+    public ParticleSystem aura;
+    public ParticleSystem tp;
+
     GameObject target = null;
     public UI abilityUI;
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
         Debug.Log(Application.systemLanguage);
         abilities = new Ability[5];
-   //     if (Application.systemLanguage == SystemLanguage.French)
-   //     {
-            abilities[0] = allAbilities[0];
-            abilities[1] = allAbilities[2];
-            abilities[2] = allAbilities[3];
-            abilities[3] = allAbilities[4];
-            abilities[4] = allAbilities[5];
-   //     }
-     /*   else
-        {
-            abilities[0] = allAbilities[1];
-            abilities[1] = allAbilities[2];
-            abilities[2] = allAbilities[3];
-            abilities[3] = allAbilities[4];
-            abilities[4] = allAbilities[5];
-        }*/
+        //     if (Application.systemLanguage == SystemLanguage.French)
+        //     {
+        abilities[0] = allAbilities[0];
+        abilities[1] = allAbilities[2];
+        abilities[2] = allAbilities[3];
+        abilities[3] = allAbilities[4];
+        abilities[4] = allAbilities[5];
+        //     }
+        /*   else
+           {
+               abilities[0] = allAbilities[1];
+               abilities[1] = allAbilities[2];
+               abilities[2] = allAbilities[3];
+               abilities[3] = allAbilities[4];
+               abilities[4] = allAbilities[5];
+           }*/
         animator = GetComponentInChildren<Animator>();
         pc = GetComponent<PlayerController>();
         cm = GetComponent<CharacteristicsManager>();
@@ -52,8 +58,8 @@ public class AbilityManager : MonoBehaviour
     }
     float timer = 0;
     float timerBubulle = 0;
-	// Update is called once per frame
-	void Update ()
+    // Update is called once per frame
+    void Update()
     {
         /* Checks for ability input */
         for (int i = 0; i < abilities.Length; i++)
@@ -65,7 +71,45 @@ public class AbilityManager : MonoBehaviour
                 // Si le cooldown de la capacité est terminé
                 if (cooldownTimer[i] <= 0)
                 {
-                    if(currentAbility.hotkey == KeyCode.Alpha2)
+                    //////////
+                    ///TEST///
+                    //////////
+
+                    if (currentAbility == abilities[0])
+                    {
+                        print("BOOM");
+                    }
+
+                    if (currentAbility == abilities[1])
+                    {
+                        print("PUISSANCE");
+                        state = 1;
+                    }
+
+                    if (currentAbility == abilities[2])
+                    {
+                        print("BOUCLIER");
+                        state = 2;
+                    }
+
+                    if (currentAbility == abilities[3])
+                    {
+                        ParticleSystem newParticleSystem = Instantiate(shock, pc.transform.position, Quaternion.Euler(90, 0, 0)) as ParticleSystem;
+                        Destroy(newParticleSystem.gameObject, 3f);
+                        print("DEGAGE");
+                    }
+
+                    if (currentAbility == abilities[4])
+                    {
+                        print("TELEPORTATION");
+                        state = 3;
+                    }
+
+                    //////////////
+                    ///FIN TEST///
+                    //////////////
+
+                    if (currentAbility.hotkey == KeyCode.Alpha2)
                     {
                         timer = 0;
                         animator.SetBool("Furying", true);
@@ -73,7 +117,7 @@ public class AbilityManager : MonoBehaviour
                     else if (currentAbility.hotkey == KeyCode.R)
                     {
                         Debug.Log("shield up");
-                        animationBubulle(true);
+                        //animationBubulle(true);
                     }
                     // On paie le prix de la capacité
                     cm.moveSpeed *= currentAbility.speedMultiplier;
@@ -108,14 +152,14 @@ public class AbilityManager : MonoBehaviour
                 }
             }
             timerBubulle += Time.deltaTime;
-            animationBubulle(false);
+            //animationBubulle(false);
         }
 
         // Mise à jour des cooldowns
         for (int i = 0; i < cooldownTimer.Length; i++)
         {
-            if(cooldownTimer[i] >= 0)
-            { 
+            if (cooldownTimer[i] >= 0)
+            {
                 cooldownTimer[i] -= Time.deltaTime;
                 if (cooldownTimer[i] <= 0)
                 {
@@ -129,6 +173,8 @@ public class AbilityManager : MonoBehaviour
         {
             animator.SetBool("Furying", false);
         }
+
+        AnimateAbilities();
     }
 
     public float getCooldownRate(int i)
@@ -136,39 +182,78 @@ public class AbilityManager : MonoBehaviour
         return Mathf.Clamp01(cooldownTimer[i] / abilities[i].aCooldown);
     }
 
-    public void animationBubulle(bool justActivated)
+    void AnimateAbilities()
     {
-   /*     Debug.Log(timerBubulle);
-        // On active le bouclier avec le bouton droit
-        if ( state == 0 && justActivated)
+        /////////////
+        //PUISSANCE//
+        /////////////
+
+        if (state == 1)
         {
-            timerBubulle = 0;
-            Debug.Log(state);
-            state = -1;
+            newParticleSystem = Instantiate(aura, pc.transform.position, Quaternion.Euler(-90, 0, 0)) as ParticleSystem;
+            Destroy(newParticleSystem.gameObject, 5f);
+            state = 11;
+            timer = 0;
         }
 
-        // Le bouclier grandit
-        if (state == -1)
+        if (state == 11)
         {
-            bubulle.localScale += new Vector3(0.025f, 0.025f, 0.025f);
+            timer += Time.deltaTime;
+            newParticleSystem.transform.position = pc.transform.position;
+            if (timer >= 3)
+                state = 0;
+        }
+
+        ////////////
+        //BOUCLIER//
+        ////////////
+        
+        // Le bouclier grandit
+        if (state == 2)
+        {
+            bubulle.localScale += new Vector3(0.07f, 0.07f, 0.07f);
             if (bubulle.localScale.x >= 2)
             {
-                state = -2;
+                timer = 0;
+                state = 22;
             }
         }
 
-        if (!cm.invulnerable)
+        // On attend un moment
+        if (state == 22)
         {
-            state = -3;
+            timer += Time.deltaTime;
+            if (timer >= 5)
+                state = 23;
         }
 
         // Le bouclier rapetisse
-        if (state == -3)
+        if (state == 23)
         {
-            bubulle.localScale -= new Vector3(0.1f, 0.1f, 0.1f);
+            bubulle.localScale -= new Vector3(0.07f, 0.07f, 0.07f);
             if (bubulle.localScale.x <= 0)
                 state = 0;
         }
-        */
+
+        //////
+        //TP//
+        //////
+
+        if (state == 3)
+        {
+            newParticleSystem = Instantiate(tp, pc.transform.position, Quaternion.Euler(-90, 0, 0)) as ParticleSystem;
+            Destroy(newParticleSystem.gameObject, 5f);
+            state = 31;
+            timer = 0;
+            print("TP2");
+        }
+
+        if (state == 31)
+        {
+            timer += Time.deltaTime;
+            newParticleSystem.transform.position = pc.transform.position;
+            if (timer >= 3)
+                state = 0;
+        }
     }
 }
