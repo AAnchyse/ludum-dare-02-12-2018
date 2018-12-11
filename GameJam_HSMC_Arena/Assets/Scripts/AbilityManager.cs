@@ -6,6 +6,7 @@ public class AbilityManager : MonoBehaviour
 {
     PlayerController pc;
     CharacteristicsManager cm;
+
     // Principalement utilisée pour le joueur
     public Ability[] allAbilities;
     protected float[] cooldownTimer;
@@ -30,22 +31,13 @@ public class AbilityManager : MonoBehaviour
     {
         Debug.Log(Application.systemLanguage);
         abilities = new Ability[5];
-        //     if (Application.systemLanguage == SystemLanguage.French)
-        //     {
+
         abilities[0] = allAbilities[0];
         abilities[1] = allAbilities[2];
         abilities[2] = allAbilities[3];
         abilities[3] = allAbilities[4];
         abilities[4] = allAbilities[5];
-        //     }
-        /*   else
-           {
-               abilities[0] = allAbilities[1];
-               abilities[1] = allAbilities[2];
-               abilities[2] = allAbilities[3];
-               abilities[3] = allAbilities[4];
-               abilities[4] = allAbilities[5];
-           }*/
+
         animator = GetComponentInChildren<Animator>();
         pc = GetComponent<PlayerController>();
         cm = GetComponent<CharacteristicsManager>();
@@ -56,8 +48,10 @@ public class AbilityManager : MonoBehaviour
             cooldownTimer[i] = 0.0f;
         }
     }
+
     float timer = 0;
     float timerBubulle = 0;
+
     // Update is called once per frame
     void Update()
     {
@@ -71,43 +65,36 @@ public class AbilityManager : MonoBehaviour
                 // Si le cooldown de la capacité est terminé
                 if (cooldownTimer[i] <= 0)
                 {
-                    //////////
-                    ///TEST///
-                    //////////
-
+                    // Detecte l'activation de la grenade
                     if (currentAbility == abilities[0])
                     {
                         print("BOOM");
                     }
 
+                    // Lance l'effet de particule de la furie
                     if (currentAbility == abilities[1])
                     {
-                        print("PUISSANCE");
                         state = 1;
                     }
 
+                    // Lance l'animation du bouclier
                     if (currentAbility == abilities[2])
                     {
-                        print("BOUCLIER");
                         state = 2;
                     }
 
+                    // Lance l'effet de particule du "Dégage"
                     if (currentAbility == abilities[3])
                     {
                         ParticleSystem newParticleSystem = Instantiate(shock, pc.transform.position, Quaternion.Euler(90, 0, 0)) as ParticleSystem;
                         Destroy(newParticleSystem.gameObject, 3f);
-                        print("DEGAGE");
                     }
 
+                    // Lance l'effet de particule de la téléportation
                     if (currentAbility == abilities[4])
                     {
-                        print("TELEPORTATION");
                         state = 3;
                     }
-
-                    //////////////
-                    ///FIN TEST///
-                    //////////////
 
                     if (currentAbility.hotkey == KeyCode.Alpha2)
                     {
@@ -119,6 +106,7 @@ public class AbilityManager : MonoBehaviour
                         Debug.Log("shield up");
                         //animationBubulle(true);
                     }
+
                     // On paie le prix de la capacité
                     cm.moveSpeed *= currentAbility.speedMultiplier;
                     cm.maxHealth *= currentAbility.healthMultiplier;
@@ -174,6 +162,7 @@ public class AbilityManager : MonoBehaviour
             animator.SetBool("Furying", false);
         }
 
+        //
         AnimateAbilities();
     }
 
@@ -191,7 +180,6 @@ public class AbilityManager : MonoBehaviour
         if (state == 1)
         {
             newParticleSystem = Instantiate(aura, pc.transform.position, Quaternion.Euler(-90, 0, 0)) as ParticleSystem;
-            Destroy(newParticleSystem.gameObject, 5f);
             state = 11;
             timer = 0;
         }
@@ -200,18 +188,22 @@ public class AbilityManager : MonoBehaviour
         {
             timer += Time.deltaTime;
             newParticleSystem.transform.position = pc.transform.position;
-            if (timer >= 3)
+            if (timer >= 10)
+            {
+                Destroy(newParticleSystem.gameObject, 0f);
                 state = 0;
+            }
+
         }
 
         ////////////
         //BOUCLIER//
         ////////////
-        
+
         // Le bouclier grandit
         if (state == 2)
         {
-            bubulle.localScale += new Vector3(0.07f, 0.07f, 0.07f);
+            bubulle.localScale += new Vector3(0.05f, 0.05f, 0.05f);
             if (bubulle.localScale.x >= 2)
             {
                 timer = 0;
@@ -223,29 +215,28 @@ public class AbilityManager : MonoBehaviour
         if (state == 22)
         {
             timer += Time.deltaTime;
-            if (timer >= 5)
+            if (timer >= 10)
                 state = 23;
         }
 
         // Le bouclier rapetisse
         if (state == 23)
         {
-            bubulle.localScale -= new Vector3(0.07f, 0.07f, 0.07f);
+            bubulle.localScale -= new Vector3(0.05f, 0.05f, 0.05f);
             if (bubulle.localScale.x <= 0)
                 state = 0;
         }
 
-        //////
-        //TP//
-        //////
+        /////////////////
+        //TELEPORTATION//
+        /////////////////
 
         if (state == 3)
         {
             newParticleSystem = Instantiate(tp, pc.transform.position, Quaternion.Euler(-90, 0, 0)) as ParticleSystem;
-            Destroy(newParticleSystem.gameObject, 5f);
+            Destroy(newParticleSystem.gameObject, 10f);
             state = 31;
             timer = 0;
-            print("TP2");
         }
 
         if (state == 31)
@@ -254,6 +245,7 @@ public class AbilityManager : MonoBehaviour
             newParticleSystem.transform.position = pc.transform.position;
             if (timer >= 3)
                 state = 0;
+
         }
     }
 }
